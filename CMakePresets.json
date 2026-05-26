@@ -1,0 +1,100 @@
+{
+    "version": 10,
+    "cmakeMinimumRequired": {
+        "major": 4,
+        "minor": 0,
+        "patch": 0
+    },
+    "$comment": [
+        "Copyright (c) 2026 Christian Hinkle.",
+        "Includes: We have includes of utility files search from the `${sourceDir}` (which is the top-level project's directory), so that it's the responsibility of the top-level project to provide these files. We do this to avoid multiple includes to duplicate files. CMake throws an error if a preset is defined twice with the same name, but it does allow duplicate includes to the same file."
+    ],
+    "include": [
+        "${sourceDir}/CMakePresets_General/CMakePresets.json"
+    ],
+    "testPresets": [
+        {
+            "name": "cppplayground-base",
+            "hidden": true,
+            "filter": {
+                "include": {
+                    "name": "CppPlayground."
+                }
+            }
+        },
+        {
+            "name": "cppplayground-win-debug",
+            "displayName": "CppPlayground - Windows Debug",
+            "inherits": [
+                "cppplayground-base",
+                "win-debug"
+            ]
+        },
+        {
+            "name": "cppplayground-win-release",
+            "displayName": "CppPlayground - Windows Release",
+            "inherits": [
+                "cppplayground-base",
+                "win-release"
+            ]
+        },
+        {
+            "name": "cppplayground-linux-debug",
+            "displayName": "CppPlayground - Linux Debug",
+            "inherits": [
+                "cppplayground-base",
+                "linux-debug"
+            ]
+        },
+        {
+            "name": "cppplayground-linux-release",
+            "displayName": "CppPlayground - Linux Release",
+            "inherits": [
+                "cppplayground-base",
+                "linux-release"
+            ]
+        },
+        {
+            "name": "cppplayground-macos-debug",
+            "displayName": "CppPlayground - macOS Debug",
+            "inherits": [
+                "cppplayground-base",
+                "macos-debug"
+            ]
+        },
+        {
+            "name": "cppplayground-macos-release",
+            "displayName": "CppPlayground - macOS Release",
+            "inherits": [
+                "cppplayground-base",
+                "macos-release"
+            ]
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "cppplayground-base",
+            "hidden": true,
+            "configFile": "CppPlayground/CPackConfig.cmake",
+            "packageDirectory": "CppPlayground/Packages"
+        },
+        {
+            "name": "cppplayground-win-debug-nsis",
+            "displayName": "CppPlayground - Windows Debug - NSIS",
+            "inherits": [
+                "cppplayground-base",
+                "nsis-base"
+            ],
+            "configurePreset": "win-debug-default"
+        },
+        {
+            "name": "cppplayground-win-release-nsis",
+            "displayName": "CppPlayground - Windows Release - NSIS",
+            "inherits": [
+                "cppplayground-base",
+                "nsis-base"
+            ],
+            "configurePreset": "win-release-default"
+        }
+    ]
+}
