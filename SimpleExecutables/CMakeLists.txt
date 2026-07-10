@@ -19,12 +19,34 @@ target_compile_features(kth-largest-element-in-a-stream
 # List out all the files to compile for our target.
 target_sources(kth-largest-element-in-a-stream
   PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/703_kth-largest-element-in-a-stream/solution.h"
-    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/703_kth-largest-element-in-a-stream/main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/703_kth-largest-element-in-a-stream/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/703_kth-largest-element-in-a-stream/Main.cpp"
   )
 
 # Specify base include directories.
 target_include_directories(kth-largest-element-in-a-stream
   PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/703_kth-largest-element-in-a-stream"
+  )
+
+# Create our target.
+add_executable(flood-fill)
+
+# List out required language features.
+target_compile_features(flood-fill
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(flood-fill
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/733_flood-fill/Solution_DepthFirstSearch.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/733_flood-fill/Main_DepthFirstSearch.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(flood-fill
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/733_flood-fill"
   )
