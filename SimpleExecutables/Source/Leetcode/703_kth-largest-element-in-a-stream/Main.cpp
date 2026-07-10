@@ -1,6 +1,6 @@
 // Copyright (c) 2026 Christian Hinkle.
 
-#include <solution.h>
+#include <Solution.h>
 
 int main()
 {
