@@ -8,6 +8,28 @@ project(CppPlayground_SimpleExecutables
   )
 
 # Create our target.
+add_executable(two-sum)
+
+# List out required language features.
+target_compile_features(two-sum
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(two-sum
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/1_two-sum/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/1_two-sum/Main.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(two-sum
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/1_two-sum"
+  )
+
+# Create our target.
 add_executable(kth-largest-element-in-a-stream)
 
 # List out required language features.
