@@ -30,6 +30,29 @@ target_include_directories(two-sum
   )
 
 # Create our target.
+add_executable(clone-graph)
+
+# List out required language features.
+target_compile_features(clone-graph
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(clone-graph
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/133_clone-graph/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/133_clone-graph/Main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/133_clone-graph/Node.h"
+  )
+
+# Specify base include directories.
+target_include_directories(clone-graph
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/133_clone-graph"
+  )
+
+# Create our target.
 add_executable(kth-largest-element-in-a-stream)
 
 # List out required language features.
