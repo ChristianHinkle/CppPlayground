@@ -75,6 +75,28 @@ target_include_directories(kth-largest-element-in-a-stream
   )
 
 # Create our target.
+add_executable(binary-search)
+
+# List out required language features.
+target_compile_features(binary-search
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(binary-search
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/704_binary-search/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/704_binary-search/Main.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(binary-search
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/704_binary-search"
+  )
+
+# Create our target.
 add_executable(flood-fill_DepthFirstSearch)
 
 # List out required language features.
