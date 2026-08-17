@@ -53,6 +53,52 @@ target_include_directories(clone-graph
   )
 
 # Create our target.
+add_executable(reverse-linked-list)
+
+# List out required language features.
+target_compile_features(reverse-linked-list
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(reverse-linked-list
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/Main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/ListNode.h"
+  )
+
+# Specify base include directories.
+target_include_directories(reverse-linked-list
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list"
+  )
+
+# Create our target.
+add_executable(reverse-linked-list_Recursive)
+
+# List out required language features.
+target_compile_features(reverse-linked-list_Recursive
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(reverse-linked-list_Recursive
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/Solution_Recursive.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/Main_Recursive.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list/ListNode.h"
+  )
+
+# Specify base include directories.
+target_include_directories(reverse-linked-list_Recursive
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/206_reverse-linked-list"
+  )
+
+# Create our target.
 add_executable(kth-largest-element-in-a-stream)
 
 # List out required language features.
