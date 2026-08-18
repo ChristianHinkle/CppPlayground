@@ -30,6 +30,28 @@ target_include_directories(two-sum
   )
 
 # Create our target.
+add_executable(search-a-2d-matrix)
+
+# List out required language features.
+target_compile_features(search-a-2d-matrix
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(search-a-2d-matrix
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/74_search-a-2d-matrix/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/74_search-a-2d-matrix/Main.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(search-a-2d-matrix
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/74_search-a-2d-matrix"
+  )
+
+# Create our target.
 add_executable(clone-graph)
 
 # List out required language features.
