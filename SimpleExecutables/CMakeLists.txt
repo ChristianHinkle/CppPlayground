@@ -207,3 +207,25 @@ target_include_directories(flood-fill_BreadthFirstSearch
   PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0733_flood-fill"
   )
+
+# Create our target.
+add_executable(koko-eating-bananas)
+
+# List out required language features.
+target_compile_features(koko-eating-bananas
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(koko-eating-bananas
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0875_koko-eating-bananas/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0875_koko-eating-bananas/Main.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(koko-eating-bananas
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0875_koko-eating-bananas"
+  )
