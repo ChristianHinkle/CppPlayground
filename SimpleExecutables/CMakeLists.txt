@@ -75,6 +75,29 @@ target_include_directories(clone-graph
   )
 
 # Create our target.
+add_executable(linked-list-cycle)
+
+# List out required language features.
+target_compile_features(linked-list-cycle
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(linked-list-cycle
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0141_linked-list-cycle/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0141_linked-list-cycle/Main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0141_linked-list-cycle/ListNode.h"
+  )
+
+# Specify base include directories.
+target_include_directories(linked-list-cycle
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0141_linked-list-cycle"
+  )
+
+# Create our target.
 add_executable(reverse-linked-list)
 
 # List out required language features.
