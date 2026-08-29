@@ -30,6 +30,29 @@ target_include_directories(two-sum
   )
 
 # Create our target.
+add_executable(merge-two-sorted-lists)
+
+# List out required language features.
+target_compile_features(merge-two-sorted-lists
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(merge-two-sorted-lists
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0021_merge-two-sorted-lists/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0021_merge-two-sorted-lists/Main.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0021_merge-two-sorted-lists/ListNode.h"
+  )
+
+# Specify base include directories.
+target_include_directories(merge-two-sorted-lists
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0021_merge-two-sorted-lists"
+  )
+
+# Create our target.
 add_executable(search-a-2d-matrix)
 
 # List out required language features.
