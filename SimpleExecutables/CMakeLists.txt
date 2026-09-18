@@ -121,6 +121,28 @@ target_include_directories(linked-list-cycle
   )
 
 # Create our target.
+add_executable(number-of-islands)
+
+# List out required language features.
+target_compile_features(number-of-islands
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(number-of-islands
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0200_number-of-islands/Solution.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0200_number-of-islands/Main.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(number-of-islands
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0200_number-of-islands"
+  )
+
+# Create our target.
 add_executable(reverse-linked-list)
 
 # List out required language features.
