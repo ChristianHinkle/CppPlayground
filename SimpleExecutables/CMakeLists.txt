@@ -189,6 +189,28 @@ target_include_directories(reverse-linked-list_Recursive
   )
 
 # Create our target.
+add_executable(contains-duplicate)
+
+# List out required language features.
+target_compile_features(contains-duplicate
+  PUBLIC
+    cxx_std_20
+  )
+
+# List out all the files to compile for our target.
+target_sources(contains-duplicate
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0217_contains-duplicate/Solution_HashSet.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0217_contains-duplicate/Main_HashSet.cpp"
+  )
+
+# Specify base include directories.
+target_include_directories(contains-duplicate
+  PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/Leetcode/0217_contains-duplicate"
+  )
+
+# Create our target.
 add_executable(kth-largest-element-in-a-stream)
 
 # List out required language features.
